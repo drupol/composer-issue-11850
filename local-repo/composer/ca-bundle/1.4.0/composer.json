@@ -1,0 +1,6 @@
+{
+    "name": "composer/ca-bundle",
+    "require": {
+        "php": "^5.3.2 || ^7.0 || ^8.0"
+    }
+}
