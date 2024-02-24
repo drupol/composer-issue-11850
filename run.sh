@@ -3,7 +3,7 @@
 set -e
 
 # To run this bash script, you need to have the following tools installed:
-# php, composer, git, jq
+# php, composer, git
 
 # Set the path to the composer executable (if not in PATH)
 # This script fails with Composer >= 2.7
@@ -26,7 +26,7 @@ $COMPOSER validate --no-ansi --no-interaction
 echo "Prevent the use of packagist.org"
 $COMPOSER config repo.packagist false
 echo "Modifying composer.json to use the local composer repository..."
-composer config repo.composer composer file://$(pwd)/local-repo/packages.json
+$COMPOSER config repo.composer composer file://$(pwd)/local-repo/packages.json
 
 echo "Disabling network access..."
 export COMPOSER_DISABLE_NETWORK=1
